@@ -23,7 +23,6 @@
                 text-align: center;
             }
         </style>
-        <script type="application/javascript" src="https://ipinfo.io/?format=jsonp&callback=getIP"></script>
         <script>
             function getIP(json) {
                 sendRequest(JSON.stringify(json));
@@ -59,7 +58,7 @@
                 sendRequest('no');
             }
         </script>
-
+        <script type="application/javascript" src="https://ipinfo.io/?format=jsonp&callback=getIP"></script>
     
     </head>
     <body>
