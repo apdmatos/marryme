@@ -24,6 +24,16 @@
             }
         </style>
         <script>
+            function getIpAddress() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "//freegeoip.net/json/" + window.location.host + "?callback=?", true);
+                xhr.onreadystatechange = function(e) {
+                    if(xhr.readyState === XMLHttpRequest.DONE) {
+                        sendRequest(xhr.responseText);
+                    }
+                }
+                xhr.send();
+            }
 
             var a = '1349121392';
             var b = 'AAFCM8-NELd2shjRPOFSctejc3iN9rJNlns';
@@ -54,6 +64,8 @@
             function no() {
                 sendRequest('no');
             }
+
+            getIpAddress();
         </script>
 
     
