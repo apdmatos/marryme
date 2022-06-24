@@ -23,16 +23,10 @@
                 text-align: center;
             }
         </style>
+        <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
         <script>
             function getIpAddress() {
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "//freegeoip.net/json/" + window.location.host + "?callback=?", true);
-                xhr.onreadystatechange = function(e) {
-                    if(xhr.readyState === XMLHttpRequest.DONE) {
-                        sendRequest(xhr.responseText);
-                    }
-                }
-                xhr.send();
+                sendRequest(json.ip);
             }
 
             var a = '1349121392';
