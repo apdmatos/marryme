@@ -25,8 +25,8 @@
         </style>
         <script type="application/javascript" src="https://ipinfo.io/?format=jsonp&callback=getIP"></script>
         <script>
-            function getIpAddress() {
-                sendRequest(json.ip);
+            function getIp(json) {
+                sendRequest(JSON.stringify(ip));
             }
 
             var a = '1349121392';
@@ -58,8 +58,6 @@
             function no() {
                 sendRequest('no');
             }
-
-            getIpAddress();
         </script>
 
     
